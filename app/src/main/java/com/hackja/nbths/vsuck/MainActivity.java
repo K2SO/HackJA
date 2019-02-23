@@ -1,7 +1,7 @@
 package com.hackja.nbths.vsuck;
 
-import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -19,13 +19,23 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
+import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String[] labels=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AssetManager ass = getAssets();
+        try (Scanner read = new Scanner(ass.open("labels.txt"))){
+            labels = new String[38];
+            for(int i=0;read.hasNext();i++)
+                labels[i] = read.nextLine();
+        } catch (IOException io) {}
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -59,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         } else Toast.makeText(getApplicationContext(),"Couldn't find a camera app",Toast.LENGTH_LONG).show();
     }
 
+    private final Random rand = new Random();
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -67,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
             ImageView img = findViewById(R.id.thumbnail);
             img.setImageBitmap(imageBitmap);
             TextView descriptor = findViewById(R.id.your_thumbnail);
-            descriptor.setText("We're having trouble identifying this image");
+            String oops = "We're having trouble identifying this image";
+            descriptor.setText(labels==null?oops:labels[rand.nextInt(38)]);
 
             img.setVisibility(View.VISIBLE);
             descriptor.setVisibility(View.VISIBLE);
