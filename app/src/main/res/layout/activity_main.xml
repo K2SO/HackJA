@@ -29,7 +29,8 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="200dp"
         android:scaleType="centerInside"
-        android:src="@drawable/camera_icon" />
+        android:src="@drawable/camera_icon"
+        android:onClick="OpenCam"/>
 
     <TextView
         android:id="@+id/scan_tag_text"
