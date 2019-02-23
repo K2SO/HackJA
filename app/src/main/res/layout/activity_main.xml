@@ -5,82 +5,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/welcome_text"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:text="WELCOME TO WASH ME!"
-        android:textSize="30dp"
-        android:textColor="#000000"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <ImageButton
-        android:id="@+id/camera_button"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/welcome_text"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="200dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/camera_icon"
-        android:onClick="OpenCam"/>
-        android:backgroundTint="@color/colorPrimaryDark"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/scan_tag_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/camera_button"
-        android:layout_marginTop="15dp"
-        android:enabled="true"
-        android:text="Scan Tag"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="33sp"
-        android:textStyle="normal"
-        android:layout_centerInParent="true"/>
-    <TextView
-        android:id="@+id/how_it_works"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/scan_tag_text"
-        android:enabled="true"
-        android:textAlignment="center"
-        android:text="How it works"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:textColor="#000000"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/instructions"
-        android:enabled="true"
-        android:layout_below="@id/how_it_works"
-        android:layout_centerInParent="true"
-        android:text="1)Tap the ''scan tag'' and you will be directed to your camera \n 2)The app then figures out the symbol and gives you instructions on how to wash your article of clothing"
-        android:textSize="20sp"
-        android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/welcome_text"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="WELCOME TO WASH ME!"
+                android:textColor="#000000"
+                android:textSize="30sp" />
 
-</RelativeLayout>
+            <ImageButton
+                android:id="@+id/camera_button"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/welcome_text"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="110dp"
+                android:onClick="OpenCam"
+                android:scaleType="centerInside"
+                android:src="@drawable/camera_icon"
+                android:backgroundTint="@color/colorPrimaryDark"/>
 
-    <ImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="180dp"
-        android:layout_height="240dp"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="8dp"
-        android:background="#ffffffff"
-        android:contentDescription="Nope"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="115dp" />
+            <TextView
+                android:id="@+id/scan_tag_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/camera_button"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:enabled="true"
+                android:text="Scan Tag"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="33sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/how_it_works"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scan_tag_text"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:enabled="true"
+                android:text="How it works"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/how_it_works"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="0dp"
+                android:enabled="true"
+                android:text="1)Tap the ''scan tag'' and you will be directed to your camera \n 2)The app then figures out the symbol and gives you instructions on how to wash your article of clothing \n 3) If you want to take another image then click the camera, or if your image is not the right one then click the camera again"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/how_it_works"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="225dp"
+                android:visibility="visible" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/your_thumbnail"
+                android:text="Here is your image"
+                android:textSize="25sp"
+                android:layout_below="@id/thumbnail"
+                android:layout_centerInParent="true"
+                android:textColor="#000000"/>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
