@@ -103,7 +103,23 @@
                 android:textColor="#000000"
                 android:visibility="gone"/>
 
+            <Button
+                android:id="@+id/auto_continue"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/your_thumbnail"
+                android:layout_centerInParent="true"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:elevation="6dp"
+                android:text="CONTINUE"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#00c0ff"
+                android:layout_marginBottom="25dp"
+                android:visibility="invisible"/>
+
         </RelativeLayout>
+
+
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
