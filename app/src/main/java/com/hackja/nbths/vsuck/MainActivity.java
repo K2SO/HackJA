@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String imageFileName = "JPEG_" + timeStamp + "_";
+            String imageFileName = timeStamp;
             File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             try {
                 File image = File.createTempFile(
