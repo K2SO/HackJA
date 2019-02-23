@@ -17,6 +17,7 @@
         android:layout_marginTop="0dp"
         android:text="WELCOME TO WASH ME!"
         android:textSize="30dp"
+        android:textColor="#000000"
         android:gravity="center"/>
 
     <ImageButton
@@ -29,7 +30,8 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="200dp"
         android:scaleType="centerInside"
-        android:src="@drawable/camera_icon" />
+        android:src="@drawable/camera_icon"
+        android:backgroundTint="@color/colorPrimaryDark"/>
 
     <TextView
         android:id="@+id/scan_tag_text"
@@ -44,6 +46,28 @@
         android:textSize="33sp"
         android:textStyle="normal"
         android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/how_it_works"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scan_tag_text"
+        android:enabled="true"
+        android:textAlignment="center"
+        android:text="How it works"
+        android:textSize="30sp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/instructions"
+        android:enabled="true"
+        android:layout_below="@id/how_it_works"
+        android:layout_centerInParent="true"
+        android:text="1)Tap the ''scan tag'' and you will be directed to your camera \n 2)The app then figures out the symbol and gives you instructions on how to wash your article of clothing"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
 
 
 
